@@ -43,7 +43,7 @@ function App() {
       }
 
       // Update URL to match your backend when deploying
-      const apiUrl = 'http://localhost:5000/bfhl';
+      const apiUrl = 'https://bajaj-challenge-iesd.onrender.com/bfhl';
       
       const response = await fetch(apiUrl, {
         method: 'POST',
