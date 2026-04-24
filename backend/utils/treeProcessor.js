@@ -1,5 +1,5 @@
 /**
- * Processes the input data to build trees, detect cycles, and calculate depths.
+ * here we processes the input data to build trees, detect cycles, and calculate depths.
  */
 
 function processHierarchies(data) {
@@ -31,7 +31,7 @@ function processHierarchies(data) {
         }
 
         seen_edges.add(trimmed);
-        
+
         // Multi-parent case: first encountered parent wins
         if (child_to_parent.has(child)) {
             // Silently discard subsequent parent edges for that child
@@ -99,7 +99,7 @@ function processHierarchies(data) {
         // Potential roots: nodes in group that are never children in valid_edges
         const group_nodes = new Set(group);
         const roots = group.filter(node => !all_children.has(node)).sort();
-        
+
         let root = "";
         let is_pure_cycle = false;
 
@@ -122,7 +122,7 @@ function processHierarchies(data) {
         } else {
             hierarchy.depth = depth;
             total_trees++;
-            
+
             // Summary tiebreaker
             if (depth > max_depth) {
                 max_depth = depth;
@@ -205,7 +205,7 @@ function analyzeGroup(root, adj, group_nodes) {
         const node_tree = {};
         let max_child_depth = 0;
         const children = (adj[u] || []).sort(); // Sort children lexicographically for consistent output
-        
+
         children.forEach(v => {
             const { subtree, d } = buildTree(v);
             node_tree[v] = subtree;

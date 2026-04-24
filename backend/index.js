@@ -10,9 +10,9 @@ app.use(express.json());
 
 // Identity Fields
 const USER_INFO = {
-    user_id: "mohitnaidu_24042026",
-    email_id: "mohit.naidu@college.edu",
-    college_roll_number: "21CS1001"
+    user_id: "mohitnaidu_07082006",
+    email_id: "mohithnaidu_sanapati@srmap.edu.in",
+    college_roll_number: "AP23110011609"
 };
 
 /**
@@ -45,15 +45,6 @@ app.post('/bfhl', (req, res) => {
             message: "Internal server error"
         });
     }
-});
-
-/**
- * GET /bfhl (Optional but good practice)
- */
-app.get('/bfhl', (req, res) => {
-    res.status(200).json({
-        operation_code: 1
-    });
 });
 
 app.listen(PORT, () => {
